@@ -1,0 +1,42 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "hidden": true,
+            "name": "Qt",
+            "cacheVariables": {
+                "CMAKE_PREFIX_PATH": "$env{QTDIR}"
+            }
+        },
+        {
+            "hidden": true,
+            "name": "MSVC",
+            "inherits": "Qt",
+            "binaryDir": "build",
+            "cacheVariables": {
+                "CMAKE_GENERATOR": "Visual Studio 17 2022"
+            }
+        },
+        {
+            "name": "MSVC-Release",
+            "inherits": "MSVC",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "MSVC-Debug",
+            "inherits": "MSVC",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "MSVC-RelWithDebInfo",
+            "inherits": "MSVC",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        }
+    ]
+}
